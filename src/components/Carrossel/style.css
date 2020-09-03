@@ -1,0 +1,9 @@
+.carrossel-content {
+  display: flex;
+  justify-content: center;
+}
+
+.carrossel-img {
+  width: 100%;
+  height: 25rem;
+}

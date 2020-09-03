@@ -1,4 +1,7 @@
-const express = require('express');
+const express = require("express");
+const routes = require("./routes");
 const app = express();
 
-app.listen(3333, () => console.log('Rodando'))
+app.use(routes);
+
+app.listen(3333, () => console.log("Rodando"));
