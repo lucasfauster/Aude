@@ -7,18 +7,11 @@ exports.seed = function (knex) {
       return knex("images").insert([
         {
           dir: "https://p7.storage.canalblog.com/77/85/469767/26119391.jpg",
-          album: "lugares",
-          description: "convento",
+          albums_id: 2,
         },
         {
-          dir: "https://p7.storage.canalblog.com/77/85/469767/26119391.jpg",
-          album: "lugares",
-          description: "escada",
-        },
-        {
-          dir: "https://p7.storage.canalblog.com/77/85/469767/26119391.jpg",
-          album: "lugares",
-          description: "parede",
+          dir: "https://p1.storage.canalblog.com/17/87/469767/26119427.jpg",
+          albums_id: 2,
         },
       ]);
     });

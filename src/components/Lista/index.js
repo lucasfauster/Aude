@@ -11,9 +11,9 @@ const VideoLanc = (props) => {
       {dados.map((conteudo) => {
         return (
           <Card className="conteudo">
-            <Card.Img variant="top" className="img" src={conteudo.img} />
+            <Card.Img variant="top" className="img" src={conteudo.dir} />
             <Card.Body>
-              <Card.Title>{conteudo.titulo}</Card.Title>
+              <Card.Title>{conteudo.nome}</Card.Title>
               <Card.Text>{conteudo.desc}</Card.Text>
               <Link to="/videos">
                 <Button>Infos</Button>

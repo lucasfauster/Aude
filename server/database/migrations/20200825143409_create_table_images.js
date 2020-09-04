@@ -1,9 +1,15 @@
-exports.up = (knex) =>
-  knex.schema.createTable("images", (table) => {
+exports.up = (knex) => {
+  return knex.schema.createTable("images", (table) => {
     table.increments("id");
     table.text("dir");
-    table.text("album");
-    table.text("description");
+    table
+      .integer("albums_id")
+      .references("albums.id")
+      .notNullable()
+      .onDelete("CASCADE");
   });
+};
 
-exports.down = (knex) => knex.schema.dropTable("images");
+exports.down = (knex) => {
+  return knex.schema.dropTable("images");
+};
