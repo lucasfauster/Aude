@@ -8,7 +8,7 @@ const Header = () => {
       <Navbar bg="light" variant="light" className="header-container">
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/fotos">Fotos</Nav.Link>
+          <Nav.Link href="/albums">Fotos</Nav.Link>
           <Nav.Link href="/videos">Vídeos</Nav.Link>
           <Nav.Link href="/bio">Bio</Nav.Link>
         </Nav>

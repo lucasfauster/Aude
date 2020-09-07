@@ -1,48 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/index";
 import Carrossel from "../../components/Carrossel/index";
 import Lista from "../../components/Lista/index";
+import api from "../../services/api";
 import "./style.css";
 
 const Landing = () => {
-  const videos = [
-    {
-      titulo: "Indianara",
-      img:
-        "https://scontent.fsdu5-1.fna.fbcdn.net/v/t1.0-9/59973504_1234278780080468_2210601821662085120_o.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=lxIKMNsIN6cAX83-TA7&_nc_ht=scontent.fsdu5-1.fna&oh=6395d3fd499e1737d5ead9a7af656f03&oe=5F7692BD",
-      desc:
-        "Anarquista, revolucionária e puta, assim se define Indianara mulher transexual que luta por seus direitos em meio a sociedade brasileira",
-    },
-    {
-      titulo: "Indianara",
-      img:
-        "https://scontent.fsdu5-1.fna.fbcdn.net/v/t1.0-9/59973504_1234278780080468_2210601821662085120_o.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=lxIKMNsIN6cAX83-TA7&_nc_ht=scontent.fsdu5-1.fna&oh=6395d3fd499e1737d5ead9a7af656f03&oe=5F7692BD",
-      desc:
-        "Anarquista, revolucionária e puta, assim se define Indianara mulher transexual que luta por seus direitos em meio a sociedade brasileira",
-    },
-    {
-      titulo: "Indianara",
-      img:
-        "https://scontent.fsdu5-1.fna.fbcdn.net/v/t1.0-9/59973504_1234278780080468_2210601821662085120_o.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=lxIKMNsIN6cAX83-TA7&_nc_ht=scontent.fsdu5-1.fna&oh=6395d3fd499e1737d5ead9a7af656f03&oe=5F7692BD",
-      desc:
-        "Anarquista, revolucionária e puta, assim se define Indianara mulher transexual que luta por seus direitos em meio a sociedade brasileira",
-    },
-    {
-      titulo: "Indianara",
-      img:
-        "https://scontent.fsdu5-1.fna.fbcdn.net/v/t1.0-9/59973504_1234278780080468_2210601821662085120_o.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=lxIKMNsIN6cAX83-TA7&_nc_ht=scontent.fsdu5-1.fna&oh=6395d3fd499e1737d5ead9a7af656f03&oe=5F7692BD",
-      desc:
-        "Anarquista, revolucionária e puta, assim se define Indianara mulher transexual que luta por seus direitos em meio a sociedade brasileira",
-    },
-    {
-      titulo: "Indianara",
-      img:
-        "https://scontent.fsdu5-1.fna.fbcdn.net/v/t1.0-9/59973504_1234278780080468_2210601821662085120_o.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=lxIKMNsIN6cAX83-TA7&_nc_ht=scontent.fsdu5-1.fna&oh=6395d3fd499e1737d5ead9a7af656f03&oe=5F7692BD",
-      desc:
-        "Anarquista, revolucionária e puta, assim se define Indianara mulher transexual que luta por seus direitos em meio a sociedade brasileira",
-    },
-  ];
+  const [dados, setDados] = useState([]);
 
+  const listaVideos = () => {
+    try {
+      const aux = api.get("videos");
+      aux.then((dado) => {
+        setDados(dado.data.slice(-6));
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    listaVideos();
+  }, []);
   return (
     <div>
       <Header />
@@ -51,8 +30,8 @@ const Landing = () => {
           <Carrossel />
         </div>
         <div className="lista-videos">
-          <h2> Lançamentos: </h2>
-          <Lista dados={videos} />
+          <h2> Últimos filmes: </h2>
+          <Lista dados={dados} link="/videos" btn="Info" />
         </div>
       </div>
     </div>

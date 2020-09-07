@@ -1,50 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Carousel, Image } from "react-bootstrap";
+import api from "../../services/api";
 import "./style.css";
 
 const Carrossel = () => {
+  const [dados, setDados] = useState([]);
+
+  const listaAlbums = () => {
+    try {
+      const aux = api.get("albums");
+      aux.then((dado) => {
+        setDados(dado.data.slice(-3));
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    listaAlbums();
+  }, []);
   return (
     <Carousel className="carrossel-content">
-      <Carousel.Item className="carrossel-item">
-        <Link to="/fotos">
-          <Image
-            className="carrossel-img"
-            src="https://p1.storage.canalblog.com/17/87/469767/26119427.jpg"
-            alt="First slide"
-          />
-        </Link>
-        <Carousel.Caption>
-          <h3>Album lugares</h3>
-          <p>Lugar</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item className="carrossel-item">
-        <Link to="/fotos">
-          <Image
-            className="carrossel-img"
-            src="https://p7.storage.canalblog.com/77/85/469767/26119391.jpg"
-            alt="First slide"
-          />
-        </Link>
-        <Carousel.Caption>
-          <h3>Album lugares</h3>
-          <p>Lugar</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item className="carrossel-item">
-        <Link to="/fotos">
-          <Image
-            className="carrossel-img"
-            src="https://p7.storage.canalblog.com/77/85/469767/26119391.jpg"
-            alt="First slide"
-          />
-        </Link>
-        <Carousel.Caption>
-          <h3>Album lugares</h3>
-          <p>Lugar</p>
-        </Carousel.Caption>
-      </Carousel.Item>
+      {dados.map((album) => {
+        return (
+          <Carousel.Item className="carrossel-item" key={album.id}>
+            <Link to="/albums">
+              <Image
+                className="carrossel-img"
+                src={album.dir}
+                alt="First slide"
+              />
+            </Link>
+            <Carousel.Caption>
+              <h3>{album.nome}</h3>
+              <p>{album.desc}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        );
+      })}
     </Carousel>
   );
 };

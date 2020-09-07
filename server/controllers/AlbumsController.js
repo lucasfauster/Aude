@@ -6,6 +6,12 @@ module.exports = {
 
     return res.json(results);
   },
+  async sel_album(req, res) {
+    const id = req.params;
+    const results = await knex("albums").where(id);
+
+    return res.json(results);
+  },
   async create(req, res, next) {
     try {
       const album = req.body;

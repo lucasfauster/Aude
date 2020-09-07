@@ -1,3 +1,15 @@
 .conteudo {
   padding: 0px !important;
+  text-align: center;
+}
+
+.txt {
+  max-height: 96px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-line;
+}
+
+.img {
+  max-height: 360px;
 }

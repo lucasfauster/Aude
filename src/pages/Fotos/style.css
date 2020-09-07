@@ -1,8 +1,10 @@
-.container {
-  margin-top: 2rem;
-  text-align: center;
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.image-gallery {
+  margin-top: 1rem;
 }
 
-h2 {
-  font-family: "Montserrat", sans-serif;
+.texto {
+  margin-top: 2rem;
+  text-align: center;
 }

@@ -10,13 +10,13 @@ const VideoLanc = (props) => {
     <CardColumns className="lista">
       {dados.map((conteudo) => {
         return (
-          <Card className="conteudo">
+          <Card className="conteudo" key={conteudo.id}>
             <Card.Img variant="top" className="img" src={conteudo.dir} />
             <Card.Body>
               <Card.Title>{conteudo.nome}</Card.Title>
-              <Card.Text>{conteudo.desc}</Card.Text>
-              <Link to="/videos">
-                <Button>Infos</Button>
+              <Card.Text className="txt">{conteudo.desc}</Card.Text>
+              <Link to={`${props.link}/${conteudo.id}`}>
+                <Button>{props.btn}</Button>
               </Link>
             </Card.Body>
           </Card>

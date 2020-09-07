@@ -1,7 +1,8 @@
 exports.up = (knex) => {
   return knex.schema.createTable("images", (table) => {
     table.increments("id");
-    table.text("dir");
+    table.text("original");
+    table.text("thumbnail");
     table
       .integer("albums_id")
       .references("albums.id")

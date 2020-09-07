@@ -2,22 +2,22 @@ const knex = require("../database");
 
 module.exports = {
   async index(req, res) {
-    const results = await knex("images");
+    const results = await knex("videos");
 
     return res.json(results);
   },
-  async sel_album(req, res) {
+  async sel_videos(req, res) {
     const id = req.params;
 
-    const results = await knex("images").where(id);
+    const results = await knex("videos").where(id);
 
     return res.json(results);
   },
   async create(req, res, next) {
     try {
-      const image = req.body;
+      const video = req.body;
 
-      await knex("images").insert(image);
+      await knex("videos").insert(video);
 
       return res.status(201).send();
     } catch (error) {
@@ -26,11 +26,11 @@ module.exports = {
   },
   async update(req, res, next) {
     try {
-      const image = req.body;
+      const video = req.body;
 
       const id = req.params;
 
-      await knex("images").update(image).where(id);
+      await knex("videos").update(video).where(id);
 
       return res.send();
     } catch (error) {
@@ -39,11 +39,11 @@ module.exports = {
   },
   async delete(req, res, next) {
     try {
-      const image = req.body;
+      const video = req.body;
 
       const id = req.params;
 
-      await knex("images").delete(image).where(id);
+      await knex("videos").delete(video).where(id);
 
       return res.send();
     } catch (error) {
