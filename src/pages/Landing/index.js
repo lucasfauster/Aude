@@ -30,7 +30,7 @@ const Landing = () => {
           <Carrossel />
         </div>
         <div className="lista-videos">
-          <h2> Últimos filmes: </h2>
+          <h2> Últimos trabalhos: </h2>
           <Lista dados={dados} link="/videos" btn="Info" />
         </div>
       </div>

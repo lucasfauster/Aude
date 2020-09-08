@@ -11,7 +11,7 @@ const Carrossel = () => {
     try {
       const aux = api.get("albums");
       aux.then((dado) => {
-        setDados(dado.data.slice(-3));
+        setDados(dado.data.slice(-3).reverse());
       });
     } catch (err) {
       console.log(err);
