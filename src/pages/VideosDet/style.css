@@ -1,5 +1,6 @@
 img {
   max-width: 100%;
+  align-self: center;
 }
 
 .corpo {
@@ -8,4 +9,14 @@ img {
 
 .texto {
   margin-top: 2rem;
+}
+
+.link {
+  margin-top: 2rem;
+}
+
+.react-player {
+  margin: 0 auto;
+  top: 0;
+  left: 0;
 }

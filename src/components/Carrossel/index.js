@@ -26,7 +26,7 @@ const Carrossel = () => {
       {dados.map((album) => {
         return (
           <Carousel.Item className="carrossel-item" key={album.id}>
-            <Link to="/albums">
+            <Link to={`/fotos/${album.id}`}>
               <Image
                 className="carrossel-img"
                 src={album.dir}

@@ -4,7 +4,8 @@ exports.up = function (knex) {
     table.text("dir");
     table.text("nome");
     table.text("desc");
-    table.json("links");
+    table.text("trailer");
+    table.text("links");
   });
 };
 

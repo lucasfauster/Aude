@@ -11,12 +11,9 @@ exports.seed = function (knex) {
           nome: "Indianara",
           desc:
             "Anarquista, revolucionária e puta, assim se define Indianara mulher transexual que luta por seus direitos em meio a sociedade brasileira",
-          links: {
-            trailer: "https://vimeo.com/342765887",
-            mubi: "https://mubi.com/pt/films/indianara",
-            youtube:
-              "https://www.youtube.com/watch?v=O2boC0VoJHI&ab_channel=YouTubeMovies",
-          },
+          trailer: "https://vimeo.com/342765887",
+          links:
+            "https://mubi.com/pt/films/indianara,https://www.youtube.com/watch?v=O2boC0VoJHI&ab_channel=YouTubeMovies",
         },
         {
           dir:
@@ -24,11 +21,9 @@ exports.seed = function (knex) {
           nome: "Sexo Politicas e Pregações",
           desc:
             "Apesar da imagem que o Brasil carrega das mulheres bonitas e da sexualidade liberada, o País apresenta, ao mesmo tempo, um lugar onde a igualdade de gênero e a liberdade sexual ainda são questões que carecem de diálogo",
-          links: {
-            trailer: "https://vimeo.com/187681617",
-            now:
-              "https://www.nowonline.com.br/filme/sexo-pregacoes-e-politica/87658",
-          },
+          trailer: "https://vimeo.com/187681617",
+          links:
+            "https://www.nowonline.com.br/filme/sexo-pregacoes-e-politica/87658",
         },
         {
           dir:
@@ -36,10 +31,8 @@ exports.seed = function (knex) {
           nome: "Rio Ano Zero",
           desc:
             "In a city where campaigns can take the appearance of a circus or a carnival, Rio Ano Zero tries to decipher the violence and absurdity of a developing country.",
-          links: {
-            trailer: "",
-            vimeo: "https://vimeo.com/185731679",
-          },
+          trailer: "",
+          links: "https://vimeo.com/185731679",
         },
       ]);
     });

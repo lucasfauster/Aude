@@ -39,7 +39,7 @@ const Fotos = (props) => {
     <div>
       <Header />
       <div className="corpo">
-        <ImageGallery items={dadosFotos} srcSet="dir" />
+        <ImageGallery items={dadosFotos} showPlayButton={false} />
         <div className="texto">
           <h2>{dadosAlbums.map((album) => album.nome)}</h2>
           <p>{dadosAlbums.map((album) => album.desc)}</p>
